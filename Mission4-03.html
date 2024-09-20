@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>mission4-03</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('omikuji002.jpg'); /* ここに背景画像のパスを指定 */
+            background-size: cover; /* 画像を画面いっぱいに拡大・縮小 */
+            background-position: center; /* 画像を中央に配置 */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white; /* テキストの色を白に変更 */
+        }
+
+        #omikuji {
+            font-size: 24px;
+            color: #333;
+            margin: 20px 0;
+            padding: 15px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 1.0s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id =omikuji>ここに結果を表示します</div>
+    <button onclick="omikujikekka()">おみくじを引く！</button>
+    <script>
+    function omikujikekka() {
+    var omikuji = new Array("大吉","小吉","中吉");
+
+    var number1 = Math.random();
+    var number = Math.floor(number1*3);
+    var kekka = omikuji[number];
+    
+    var object = document.getElementById("omikuji");
+    object.innerText = kekka;
+}
+    </script>
+</body>
+</html>
